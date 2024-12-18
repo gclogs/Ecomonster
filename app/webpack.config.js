@@ -1,17 +1,21 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
     mode: "production",
-    entry: './src/main.ts',
+    entry: './main.ts',
     module: {
         rules: [
             {
                 test: /\.ts$/,
-                use: 'ts-loader',
-                exclude: /node_modules/,
-                options: {
-                    transpileOnly: false
-                }
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: false
+                    }
+                },
+                exclude: /node_modules/
             }
         ],
     },
@@ -25,7 +29,25 @@ module.exports = {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    plugins: [
+        new webpack.DefinePlugin({
+            'ScriptApp': 'App'
+        })
+    ],
     optimization: {
-        minimize: true
+        minimize: true,
+        minimizer: [
+            new TerserPlugin({
+                terserOptions: {
+                    compress: {
+                        drop_console: true,
+                    },
+                    format: {
+                        comments: false,
+                    },
+                    mangle: true,
+                },
+            }),
+        ],
     }
 }
