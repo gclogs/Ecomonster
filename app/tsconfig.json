@@ -1,7 +1,19 @@
 {
   "compilerOptions": {
     "noEmit": false,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "zep-script": ["node_modules/zep-script/types"],
+      "zep-script/*": ["node_modules/zep-script/types/*"]
+    }
   },
   "include": ["src", "main.ts"],
   "exclude": ["node_modules"]
