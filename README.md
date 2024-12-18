@@ -25,6 +25,7 @@
 <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&&logo=MongoDB&logoColor=white">
 
 `Zep script` 에서는 `ES Modules`를 지원하지 않기 때문에 `Webpack` 번들러를 사용하였습니다.
+`Zep script`를 쉽게 설정할 수 있는 [zep-script-webpack-template](https://github.com/scm1400/zep-script-webpack-template)을 사용하면 편합니다.
 
 ## ⚖️ 라이선스
 이 프로젝트는 MIT 라이선스에 따라 라이센스가 부여됩니다. 자세한 내용은 아래를 참고하세요.
