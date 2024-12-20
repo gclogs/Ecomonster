@@ -31,7 +31,9 @@ module.exports = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            'ScriptApp': 'App'
+            'ScriptApp': 'App',
+            'ScriptMap': 'Map',
+            'ScriptPlayer': 'Player',
         })
     ],
     optimization: {
